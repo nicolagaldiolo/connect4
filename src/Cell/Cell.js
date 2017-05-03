@@ -4,7 +4,7 @@ import './Cell.css';
 class Cell extends Component {
   render() {
     return (
-      <div >
+      <div class="cell">
       </div>
     );
   }
