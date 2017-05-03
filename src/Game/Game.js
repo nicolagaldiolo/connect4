@@ -10,7 +10,7 @@ class Game extends Component {
         <div className="App-header">
           <h2>Forza Quattro</h2>
         </div>
-        <div class="table">
+        <div className="table">
           <Board cols="7"/>
           <p className="App-intro">
             Player: Nicola
