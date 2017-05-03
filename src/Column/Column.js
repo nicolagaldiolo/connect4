@@ -5,13 +5,13 @@ import Cell from '../Cell/Cell';
 class Column extends Component {
   render() {
 
-    const Cell = [];
-    for( let i=0; i < Number.parseInt(this.props.Cells, 10); i++){
-      Cell.push(<Cell key={i}/>)
+    const cells = [];
+    for( let i=0; i < Number.parseInt(this.props.cells, 10); i++){
+      cells.push(<Cell key={i}/>)
     }
     return (
       <div className="Column">
-        {Cell}
+        {cells}
       </div>
     );
   }
