@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './Game.css';
+import Board from '../Board/Board';
 
 class Game extends Component {
   render() {
@@ -12,6 +13,7 @@ class Game extends Component {
         <p className="App-intro">
           Gioca e vinci!
         </p>
+        <Board cols="7"/>
       </div>
     );
   }
