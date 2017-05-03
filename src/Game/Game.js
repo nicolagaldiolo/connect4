@@ -4,6 +4,23 @@ import './Game.css';
 import Board from '../Board/Board';
 
 class Game extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      cells: [
+        [0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0],
+        [0,0,1,0,0,0,0],
+        [0,2,1,0,0,0,0],
+        [1,1,2,2,1,0,0]
+      ],
+      winner: false
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -11,7 +28,7 @@ class Game extends Component {
           <h2>Forza Quattro</h2>
         </div>
         <div className="table">
-          <Board cols="7"/>
+          <Board cells={this.state.cells}/>
           <p className="App-intro">
             Player: Nicola
           </p>

@@ -6,8 +6,9 @@ class Column extends Component {
   render() {
 
     const cells = [];
-    for( let i=0; i < Number.parseInt(this.props.cells, 10); i++){
-      cells.push(<Cell key={i}/>)
+    for( let i=0; i < this.props.cells.length; i++){
+      const value = this.props.cells[i];
+      cells.push(<Cell key={i} value={value}/>)
     }
     return (
       <div className="Column">
