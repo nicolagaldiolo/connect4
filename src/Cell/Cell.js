@@ -5,6 +5,7 @@ class Cell extends Component {
   render() {
     return (
       <div >
+        <h2>Cells</h2>
       </div>
     );
   }
