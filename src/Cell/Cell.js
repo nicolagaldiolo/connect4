@@ -3,9 +3,11 @@ import './Cell.css';
 
 class Cell extends Component {
   render() {
+    
+    const classCell = this.props.value == '' ? '' : ' player' + this.props.value;
+    
     return (
-      <div className="cell">{this.props.value}
-      </div>
+      <div className={"cell" + classCell} />
     );
   }
 }

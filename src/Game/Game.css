@@ -19,6 +19,21 @@
   font-size: large;
 }
 
+.player-icon{
+  width:20px;
+  height:20px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.player1{
+  background: red;
+}
+
+.player2{
+  background: yellow;
+}
+
 .table {
   display: flex;
   justify-content: center;

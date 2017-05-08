@@ -7,19 +7,20 @@ class Column extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      current: -1
+      current: this.props.cells.length
     }
     this.handleClick = this.handleClick.bind(this);
   }
 
   updateGame() {
-    this.props.addCell(this.state.current);
-    console.log(`The column was clicked. current: ${this.state.current}`);
+    if(this.state.current >= 0){
+      this.props.addCell( this.state.current);
+    }
   }
 
   handleClick(e) {
     e.preventDefault();
-    this.setState((prevState) => ({current: prevState.current + 1}), this.updateGame );
+    this.setState((prevState) => ({current: prevState.current -1}), this.updateGame );
   }
 
   render() {

@@ -6,3 +6,11 @@
     line-height: 50px;
     font-size: 40px;
 }
+
+.player1{
+    background: red;
+}
+
+.player2{
+    background: yellow;
+}

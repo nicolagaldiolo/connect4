@@ -9,26 +9,32 @@ class Game extends Component {
     
     this.state = {
       cells: [
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0]
+        Array(7).fill(''),
+        Array(7).fill(''),
+        Array(7).fill(''),
+        Array(7).fill(''),
+        Array(7).fill(''),
+        Array(7).fill(''),
+        Array(7).fill('')
       ],
-      winner: false
+      winner: false,
+      player: 1
     }
 
-    this.addCell = this.addCell.bind(this)
+    this.addCell = this.addCell.bind(this);
   }
 
   addCell(col, row) {
     console.log(`in game aggiorno ${col}-${row}`);
     console.log(this.state);
     let cells = this.state.cells.slice();
-    cells[col][row] = 1;
-    this.setState({cells: cells});
+    cells[col][row] = this.state.player;
+    let player = this.state.player == 1 ? 2 : 1;
+    this.setState({
+      cells: cells,
+      player: player
+    });
+
   }
 
   render() {
@@ -40,7 +46,7 @@ class Game extends Component {
         <div className="table">
           <Board cells={this.state.cells} addCell={this.addCell}/>
           <p className="App-intro">
-            Player: Nicola
+            Player: <span className={"player-icon player" + this.state.player}></span>
           </p>
         </div>
       </div>
