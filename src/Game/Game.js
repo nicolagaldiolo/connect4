@@ -13,12 +13,22 @@ class Game extends Component {
         [0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0],
-        [0,0,1,0,0,0,0],
-        [0,2,1,0,0,0,0],
-        [1,1,2,2,1,0,0]
+        [0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0]
       ],
       winner: false
     }
+
+    this.addCell = this.addCell.bind(this)
+  }
+
+  addCell(col, row) {
+    console.log(`in game aggiorno ${col}-${row}`);
+    console.log(this.state);
+    let cells = this.state.cells.slice();
+    cells[col][row] = 1;
+    this.setState({cells: cells});
   }
 
   render() {
@@ -28,7 +38,7 @@ class Game extends Component {
           <img src={logo} alt="forza 4"/>
         </div>
         <div className="table">
-          <Board cells={this.state.cells}/>
+          <Board cells={this.state.cells} addCell={this.addCell}/>
           <p className="App-intro">
             Player: Nicola
           </p>
