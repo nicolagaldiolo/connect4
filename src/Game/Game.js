@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
+import logo from './connect-4-logo.png';
 import './Game.css';
 import Board from '../Board/Board';
 
@@ -25,7 +25,7 @@ class Game extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Forza Quattro</h2>
+          <img src={logo} alt="forza 4"/>
         </div>
         <div className="table">
           <Board cells={this.state.cells}/>
